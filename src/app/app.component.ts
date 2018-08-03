@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Book } from './models/book.model';
 
 @Component({
@@ -7,7 +7,9 @@ import { Book } from './models/book.model';
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  @ViewChild('bName') bookName: ElementRef;
   name: string = 'default value';
+  selectedBook: Book;
   books: Book[] = [{
     code: "B001",
     name: "Object Oriented Programming with C++",
@@ -23,10 +25,13 @@ export class AppComponent {
   }];
 
   onBookSelected(data: Book) {
-    console.log(data);
+    // console.log(data);
+    this.selectedBook = data;
+    // console.log(this.bookName.nativeElement.value);
+    // this.bookName.nativeElement.value = 'Some new value';
   }
 
-  checkName() {
-    console.log(this.name);
+  checkName(element : HTMLInputElement) {
+    console.log(element.value);
   }
 }

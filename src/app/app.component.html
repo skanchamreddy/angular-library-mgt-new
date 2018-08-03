@@ -1,6 +1,11 @@
  <!--The content below is only a placeholder and can be replaced.-->
-<input type="text" name="bookName" [ngModel]="name" />
-<button (click)="checkName()">CLick Me!</button>
- <div>
+<input type="text" name="bookName" [ngModel]="name" #bName />
+<button (click)="checkName(bName)">CLick Me!</button>
+ <div class="row">
   <app-book *ngFor="let book of books" [book]="book" (selected)="onBookSelected($event)" ></app-book>
+</div>
+<div class="row">
+  <app-selected-book [book]="selectedBook" *ngIf="selectedBook">
+
+  </app-selected-book>
 </div>

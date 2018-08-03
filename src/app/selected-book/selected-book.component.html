@@ -1,0 +1,6 @@
+<p appHighlighter [book]="book">
+  {{ book.author}}
+</p>
+<p [ngStyle]="{ 'background-color': book.code === 'B001' ? 'cyan' : 'yellow' }">
+    {{ book.name}}
+  </p>
