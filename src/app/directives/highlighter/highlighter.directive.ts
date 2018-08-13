@@ -1,11 +1,12 @@
-import { Directive, OnInit, ElementRef, Renderer2, Input, OnChanges } from '@angular/core';
+import { Directive, OnInit, ElementRef, Renderer2, Input, OnChanges, HostBinding } from '@angular/core';
 import { Book } from '../../models/book.model';
 
 @Directive({
   selector: '[appHighlighter]'
 })
 export class HighlighterDirective implements OnInit, OnChanges {
-  @Input() book: Book; 
+  @Input() book: Book;
+  
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2
