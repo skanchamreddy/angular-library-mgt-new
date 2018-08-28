@@ -11,7 +11,7 @@ import { HoverElementDirective } from './hover-element.directive';
 })
 class TestComponent {}
 
-fdescribe('HoverElementDirective', () => {  
+describe('HoverElementDirective', () => {  
   let component: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
   let pTag: DebugElement;

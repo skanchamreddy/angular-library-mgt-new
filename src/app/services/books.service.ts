@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
 import { urls } from '../constants/urls.constant';
+import { Observer } from 'rxjs/Rx';
 
 @Injectable()
 export class BooksService {
@@ -41,5 +42,32 @@ export class BooksService {
         .sort((a: Book, b: Book) => a.name > b.name ? 1 : -1); 
       return books;
     });
+  }
+
+  getNameString() {
+    return new Promise(
+      (resolve, reject) => {
+        setTimeout(() => {
+          resolve('This is my name');
+        }, 2000);
+      }
+    );
+  }
+
+  getTimeObservable(): Observable<Date> {
+    console.log('called time');
+    return Observable.create(
+      (observer: Observer<Date>) => {
+        const interval = setInterval(() => {
+          observer.next(new Date());
+          // observer.error(new Error('Time Error'));
+        }, 1000);
+
+        setTimeout(() => {
+          clearInterval(interval);
+          observer.complete();
+        }, 10000)
+      }
+    )
   }
 }

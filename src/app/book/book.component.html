@@ -2,7 +2,7 @@
   <img class="thumbnail" [src]="book.thumbnail" [alt]="book.name">
   <div class="book-info">
     <h4 appHoverElement>
-      {{book.name}}
+      {{book.name|uppercase}}
     </h4>
     <p>
       Author: {{book.author}}

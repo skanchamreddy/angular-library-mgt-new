@@ -1,21 +1,21 @@
- <!--The content below is only a placeholder and can be replaced.-->
- <!-- <button [tooltip]="myTooltip">element on which this tooltip is applied.</button> -->
- <input type="text" name="bookName" [ngModel]="name" #bName />
-<button (click)="checkName(bName)">CLick Me!</button>
- <div class="row">
-  <app-book *ngFor="let book of books" [book]="book" (selected)="onBookSelected($event)" ></app-book>
-</div>
-<div class="row">
-  <app-selected-book [book]="selectedBook" *ngIf="selectedBook">
-    <p>This is some nested content</p>
-  </app-selected-book>
-</div>
-<!-- <div class="row">
-    <ngx-treeview [items]="mydata">
-    </ngx-treeview>
-</div>
-<tooltip-content #myTooltip [animation]="true" placement="left">
-  <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
-  <b><i><span style="color: #ffc520">Tooltip With</span></i></b> <small>Html support</small>.
-</tooltip-content> -->
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <button [tooltip]="myTooltip">element on which this tooltip is applied.</button> -->
 
+<div class="row">
+  {{date | date:'short'}}
+</div>
+
+<div class="row">
+  <a [routerLink]='["/home"]'>home</a> |
+  <a [routerLink]='["/books"]'>books</a> |
+
+  <a [routerLink]='["/contact"]'>contact us</a>| 
+  <a [routerLink]='["/registation"]'>registation</a> |
+  <a [routerLink]='["/login"]' >log out</a>
+</div>
+<div class="pool-right">
+ 
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -2,6 +2,6 @@
   {{ book.author}}
 </p>
 <p [ngStyle]="{ 'background-color': book.code === 'B001' ? 'cyan' : 'yellow' }">
-    {{ book.name}}
+    {{ book.name |shorten:15}}
   </p>
 <ng-content></ng-content>
